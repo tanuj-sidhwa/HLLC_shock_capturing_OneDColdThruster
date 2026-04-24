@@ -1,87 +1,100 @@
-Numerical Design and Performance Mapping of a Micro Cold-Gas Thruster
- Overview
+# 🚀 Numerical Design and Performance Mapping of a Micro Cold-Gas Thruster
 
-This project focuses on the development of a quasi-one-dimensional numerical solver to simulate compressible flow through converging–diverging nozzles for micro cold-gas thruster applications.
+## 📌 Overview
+This project focuses on the development of a **quasi-one-dimensional numerical solver** to simulate compressible flow through converging–diverging nozzles for **micro cold-gas thruster applications**.
 
-The solver is designed to efficiently capture key flow phenomena such as:
+The solver captures key flow phenomena such as:
+- Transonic acceleration  
+- Shock wave formation  
+- Supersonic expansion  
 
-Transonic acceleration
-Shock wave formation
-Supersonic expansion
+It serves as a **computationally efficient alternative to full CFD**, while maintaining high accuracy.
 
-It provides a computationally efficient alternative to full CFD, while maintaining high accuracy for preliminary propulsion design.
+---
 
-Objectives
-Develop a finite-volume based solver for quasi-1D Euler equations
-Implement and compare multiple numerical schemes
-Accurately capture shock discontinuities and expansion physics
-Validate results using:
-Analytical isentropic relations
-ANSYS Fluent simulations
-Perform parametric performance analysis for micro-thrusters
+## 🎯 Objectives
+- Develop a **finite-volume solver** for quasi-1D Euler equations  
+- Implement and compare numerical schemes  
+- Capture **shock discontinuities and expansion physics**  
+- Validate using analytical relations and CFD  
+- Perform **parametric performance analysis**  
 
-Methodology
-Governing Model
-Quasi-one-dimensional compressible Euler equations
-Conservative formulation with geometric source term
-Numerical Approach
-Finite Volume Method (FVM)
-Explicit time integration using Runge-Kutta schemes
-CFL-based stability control
-Implemented Schemes
-Lax–Friedrichs (baseline, diffusive)
-HLLC (shock-resolving Riemann solver)
-MUSCL–HLLC (second-order, high accuracy with TVD limiter)
+---
 
-The MUSCL–HLLC scheme with MinMod limiter provided the best balance between accuracy and stability.
+## 🧠 Methodology
 
-Key Results
-Accurate prediction of:
-Mach number distribution
-Pressure variation
-Shock location
-Validation results show strong agreement:
-Analytical comparison error ≈ 2–6%
-CFD comparison MAPE ≈ 12.6%
-Clear identification of flow regimes:
-Fully subsonic
-Shock-containing
-Fully supersonic
-⚙️ Performance Insights
+### Governing Model
+- Quasi-1D compressible Euler equations (conservative form)
 
-The solver was used to evaluate propulsion performance:
+### Numerical Approach
+- Finite Volume Method (FVM)  
+- Explicit Runge-Kutta time integration  
+- CFL-based time stepping  
 
-Helium
-Higher specific impulse (~244 s)
-Lower thrust
-Nitrogen
-Higher thrust (~495 mN)
-Lower specific impulse
+### Schemes Implemented
+- **Lax–Friedrichs** → robust but diffusive  
+- **HLLC** → better shock resolution  
+- **MUSCL–HLLC** → second-order accurate with TVD limiter  
 
-This demonstrates the classical propulsion trade-off between efficiency and thrust.
+**Best performing:** MUSCL–HLLC (MinMod limiter)
 
-Validation Strategy
-Analytical validation using isentropic relations
-Shock validation using normal shock theory
-CFD comparison using ANSYS Fluent (2D axisymmetric model)
+---
 
-Team
-Tanuj Sidhwa
-Tejas Bhavekar
-Siddharth Vezzu
-Sudarsanam Sai Sri Narasimha
+## 📊 Key Results
+- Accurate prediction of Mach number, pressure, and velocity  
+- Strong agreement with analytical solutions (~2–6% error)  
+- CFD comparison error ~12%  
 
-Future Work
-Extend to 2D/axisymmetric solvers
-Incorporate viscous effects (Navier–Stokes)
-Couple with optimization frameworks for design automation
-Integrate with AI-based surrogate models
-Key Takeaway
+Flow regimes successfully captured:
+- Fully subsonic  
+- Shock-containing  
+- Fully supersonic  
 
-This project demonstrates that a well-designed quasi-1D solver can:
+---
 
-Capture essential compressible flow physics
-Resolve shocks accurately
-Provide fast and reliable performance estimates
+## ⚙️ Performance Insights
+- **Helium**
+  - Higher specific impulse (~244 s)  
+  - Lower thrust  
 
-making it a powerful tool for early-stage propulsion system design.
+- **Nitrogen**
+  - Higher thrust (~495 mN)  
+  - Lower specific impulse  
+
+➡️ Demonstrates thrust vs efficiency trade-off in propulsion
+
+---
+
+## 🧪 Validation
+- Analytical (isentropic + shock relations)  
+- CFD (ANSYS Fluent, 2D axisymmetric)  
+
+---
+
+
+
+## 📄 Documentation
+- Mid Evaluation Report  
+- Final Project Report  
+- Presentation Slides  
+
+---
+
+## 👥 Team
+- Tanuj Sidhwa  
+- Tejas Bhavekar  
+- Siddharth Vezzu  
+- Sudarsanam Sai Sri Narasimha  
+
+---
+
+## 🚀 Future Work
+- Extend to 2D / axisymmetric solver  
+- Include viscous effects (Navier–Stokes)  
+- Add optimization framework  
+- Explore AI-assisted design  
+
+---
+
+## 📌 Key Takeaway
+A quasi-1D solver can efficiently capture compressible flow physics and shock behavior, making it highly useful for **preliminary propulsion design and rapid iteration**.
