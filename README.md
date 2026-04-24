@@ -50,7 +50,7 @@ Flow regimes successfully captured:
 - Shock-containing  
 - Fully supersonic  
 
----
+----
 
 ## ⚙️ Performance Insights
 - **Helium**
